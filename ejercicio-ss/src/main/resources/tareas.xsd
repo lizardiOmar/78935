@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+targetNamespace="https://t4is.uv.mx/tareas"
+xmlns:tns="https://t4is.uv.mx/tareas"
+elementFormDefault="qualified">
+    <xs:element name="CrearTareaRequest">
+        <xs:complexType>
+            <xs:sequence>
+	            <xs:element name="nombre" type="xs:string"/>
+                <xs:element name="contenido" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="CrearTareaResponse">
+        <xs:complexType>
+            <xs:sequence>
+	            <xs:element name="respuesta" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="EliminarTareaRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:int"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="EliminarTareaResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="respuesta" type="xs:boolean"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ModificarContenidoRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:int"/>
+                <xs:element name="contenido" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ModificarContenidoResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="respuesta" type="xs:boolean"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ModificarNombreRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:int"/>
+                <xs:element name="nombre" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ModificarNombreResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="respuesta" type="xs:boolean"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ModificarEstadoRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:int"/>
+                <xs:element name="estado" type="xs:int"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ModificarEstadoResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="respuesta" type="xs:boolean"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="TareasPendientesRequest"/>
+    <xs:element name="TareasPendientesResponse">
+        <xs:complexType>
+            <xs:sequence>
+	            <xs:element name="TareasPendientes" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="id" type="xs:int"></xs:element>
+                            <xs:element name="nombre" type="xs:string"></xs:element>
+                            <xs:element name="contenido" type="xs:string"></xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="TareasTerminadasRequest"/>
+    <xs:element name="TareasTerminadasResponse">
+        <xs:complexType>
+            <xs:sequence>
+	            <xs:element name="TareasTerminadas" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="id" type="xs:int"></xs:element>
+                            <xs:element name="nombre" type="xs:string"></xs:element>
+                            <xs:element name="contenido" type="xs:string"></xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="TareasRequest"/>
+    <xs:element name="TareasResponse">
+        <xs:complexType>
+            <xs:sequence>
+	            <xs:element name="Tareas" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="id" type="xs:int"></xs:element>
+                            <xs:element name="nombre" type="xs:string"></xs:element>
+                            <xs:element name="contenido" type="xs:string"></xs:element>
+                            <xs:element name="estado" type="xs:int"></xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema> 
